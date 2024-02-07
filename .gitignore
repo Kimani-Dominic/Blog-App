@@ -1,0 +1,24 @@
+# Ignore Django migration files
+Jadili/api/migrations/
+
+# Ignore Python virtual environment
+venv/
+
+# Ignore Node.js modules
+Jadili-react/node_modules/
+
+# Ignore compiled JavaScript files
+Jadili-react/dist/
+
+
+# Ignore all .pyc files
+*.pyc
+
+# Ignore the virtual environment directory
+venv/
+
+# Ignore the build directory
+build/
+
+# Ignore the local settings file
+local_settings.py
