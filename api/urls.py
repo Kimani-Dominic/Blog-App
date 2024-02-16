@@ -4,5 +4,6 @@ from .views import hello
 
 urlpatterns = [
     path('', hello, name='hello'),
+    path('', hello, name='hello'),
     # Add more URL patterns as needed
 ]
