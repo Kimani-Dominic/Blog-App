@@ -6,7 +6,7 @@ function App() {
   const [message, setMessage] = useState<string | null>(null);
 
   useEffect(() => {
-    fetch('/api/hello')
+    fetch('./api/hello')
       .then(response => response.json())
       .then(data => setMessage(data.message))
       .catch(error => console.error('Error fetching data:', error));
@@ -14,7 +14,7 @@ function App() {
 
   return (
     <div>
-      <h1>Jadili App</h1>
+      <h1>Jadili Blog-App</h1>
       {message && <p>{message}</p>}
     </div>
   );
