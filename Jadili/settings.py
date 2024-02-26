@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "corsheaders",
+    "rest_framework_simplejwt",
+    "rest_framework",
     "api",
 ]
 
@@ -71,6 +73,22 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "Jadili.wsgi.application"
+
+#REST FRAMEWORK SETTINGS
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.SessionAuthentication',
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ],
+}
+
+
 
 
 # Database
