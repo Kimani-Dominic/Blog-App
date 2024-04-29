@@ -28,11 +28,11 @@
    */
 
   /** Background colors */
-  --bg-wild-blue-yonder: hsla(216, 33%, 68%, 1);
-  --bg-carolina-blue: hsla(199, 89%, 49%, 1);
-  --bg-prussian-blue: hsla(216, 33%, 20%, 1);
-  --bg-oxford-blue: hsla(222, 44%, 13%, 1);
-  --bg-oxford-blue-2: hsla(222, 47%, 11%, 1);
+  --bg-wild-blue-yonder: rgb(1, 2, 3);
+  --bg-carolina-blue: rgb(0, 4, 5);
+  --bg-prussian-blue: rgb(1, 5, 10);
+  --bg-oxford-blue: rgb(0, 0, 0);
+  --bg-oxford-blue-2: rgb(0, 0, 0);
 
   /** Text colors */
   --text-white: hsla(0, 0%, 100%, 1);
@@ -200,10 +200,80 @@ body.nav-active { overflow: hidden; }
 
 
 
+/* App.css */
+/* CSS for aligning items to the top far right and in a rounded frame */
+
+/* Container styles */
+.relative-container {
+  position: relative;
+  display: flex;
+  justify-content: flex-end; /* Align items to the far right */
+  align-items: flex-start
+}
+
+/* Button styles */
+.dropdown-button {
+  /* Positioning */
+  position: relative;
+  /* Align to the top right */
+  top: 0;
+  right: 0;
+  /* Styling */
+  background-color: transparent;
+  border: none;
+  /* Ensure proper stacking order */
+  z-index: 1;
+}
+
+/* Dropdown menu styles */
+.dropdown-menu {
+  /* Positioning */
+  position: absolute;
+  /* Align to the top right */
+  top: 100%; /* Adjust as needed */
+  right: 0;
+  /* Styling */
+  background-color: #ffffff; /* Adjust background color as needed */
+  border-radius: 0.5rem; /* Rounded frame */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+  /* Hide by default */
+  display: none;
+}
+
+/* Dropdown menu item styles */
+.dropdown-item {
+  /* Padding */
+  padding: 0.5rem 1rem;
+  /* Hover effect */
+  transition: background-color 0.3s ease;
+}
+
+/* Show dropdown menu on hover */
+.dropdown-container:hover .dropdown-menu {
+  display: block;
+}
+
+/* Styling for the profile image */
+.image {
+  position:relative;
+  /* Rounded shape */
+  border-radius: 50%;
+  /* Adjust size as needed */
+  width: 40px;
+  height: 40px;
+  align-items: flex-end;
+  display: flex;
+  justify-content: flex-end; /* Align items to the far right */
+  align-items: flex-start
+}
+
 
 /*-----------------------------------*\
   #REUSED STYLE
 \*-----------------------------------*/
+
+
+
 
 .container { padding-inline: 16px; }
 
