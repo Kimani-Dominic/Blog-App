@@ -1,23 +1,12 @@
-# Django and PostgreSQL
+asgiref==3.8.1
 Django==3.2.6
-psycopg2-binary==2.9.1
-
-# Django REST Framework
-djangorestframework==3.12.4
 django-cors-headers==3.7.0
-
-# Frontend
-nodejs==14.17.3
-npm==7.20.0
-
-# React.js and TypeScript
-react==17.0.2
-react-dom==17.0.2
-typescript==4.3.5
-@types/react==17.0.8
-@types/react-dom==17.0.5
-
-# Redux and Axios
-redux==4.1.1
-react-redux==7.2.4
-axios==0.21.1
+django-environ==0.11.2
+djangorestframework==3.12.4
+djangorestframework-simplejwt==5.3.1
+psycopg2-binary==2.9.1
+PyJWT==2.10.1
+python-dotenv==1.0.1
+pytz==2024.2
+sqlparse==0.5.2
+typing_extensions==4.12.2
