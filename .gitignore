@@ -25,3 +25,5 @@ local_settings.py
 
 #Environment variables
 Jadili/.env
+.env
+myenv
