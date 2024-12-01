@@ -9,9 +9,13 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
+import os
 from pathlib import Path
-
+from dotenv import load_dotenv
+import environ
+env = environ.Env()
+BASE_DIR = Path(__file__).resolve().parent.parent
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -94,17 +98,26 @@ REST_FRAMEWORK = {
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql",
+#         "NAME": "jadili_db",
+#         "USER": "admin",
+#         "PASSWORD": "mypassword",
+#         "HOST": "localhost",
+#         "PORT": "5432",
+#     }
+# }
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "jadili_db",
-        "USER": "admin",
-        "PASSWORD": "mypassword",
-        "HOST": "localhost",
-        "PORT": "5432",
+        "NAME": env('DATABASE_NAME'),
+        "USER": env('DATABASE_USER'),
+        "PASSWORD": env('DATABASE_PASSWORD'),
+        "HOST": env('DATABASE_HOST', default='localhost'),
+        "PORT": env('DATABASE_PORT', default='5432'),
     }
 }
-
 #corsheaders
 
 CORS_ALLOWED_ORIGINS = [
