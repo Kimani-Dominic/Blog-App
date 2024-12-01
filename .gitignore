@@ -22,3 +22,6 @@ build/
 
 # Ignore the local settings file
 local_settings.py
+
+#Environment variables
+Jadili/.env
