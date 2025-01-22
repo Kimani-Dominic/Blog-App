@@ -17,7 +17,7 @@ import {
 function App() {
   return (
     <Router>
-      <Navbar isAuthenticated={undefined} user={undefined} handleCategoryClick={undefined} handleLogout={undefined} />
+      <Navbar />
       <Home />
       <Posts />
       <Tags />
@@ -33,3 +33,5 @@ function App() {
 }
 
 export default App;
+
+// isAuthenticated={undefined} user={undefined} handleCategoryClick={undefined} handleLogout={undefined}
