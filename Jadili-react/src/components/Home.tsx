@@ -16,7 +16,7 @@ const Home = () => {
               <p className="hero-subtitle">Hello Everyone!</p>
 
               <h1 className="headline headline-1 section-title">
-                I’m <span className="span">Rose Kididi</span>
+                I’m <span className="span">Kimani Muiruri!</span>
               </h1>
 
               <p className="hero-text">
