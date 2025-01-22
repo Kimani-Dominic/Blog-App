@@ -17,19 +17,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include, re_path
 from django.views.generic import TemplateView
-from rest_framework import routers
+# from rest_framework import routers
  
  # create a router object
-router = routers.DefaultRouter()
  
 # register the router
-#router.register(r'Post',views.TodoView, 'comment')
 
 
 urlpatterns = [
     path('', include ('api.urls')),
     path("admin/", admin.site.urls),
-    path('api/', include('api.urls')),
+    # path('api/', include('api.urls')),
     # path('api-auth/', include('rest_framework.urls')),
     # re_path(r'^.*$', TemplateView.as_view(template_name='index.html')),  # Serve React app for all other URLs
 ]
