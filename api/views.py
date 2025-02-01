@@ -3,8 +3,8 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.tokens import RefreshToken
-from .models import Category, Post, Comment
-from .serializers import UserRegSerializer, UserLoginSerializer, TokenPairSerializer, CategorySerializer, PostSerializer, CommentSerializer
+from .models import *
+from .serializers import *
 
 class UserRegistrationView(APIView):
     def post(self, request):
@@ -40,3 +40,6 @@ class AddCommentView(APIView):
             return Response({'message': 'Comment added successfully'}, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+class ProfileViewset(viewsets.ModelViewSet):
+    queryset = Profile.objects.all()
+    serializer_class = ProfileSerializer
