@@ -1,8 +1,9 @@
 from rest_framework import serializers
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 from rest_framework.validators import UniqueValidator
-from .models import Category, Post, Comment
+from .models import *
 
+User = get_user_model()
 class UserRegSerializer(serializers.ModelSerializer):
     email = serializers.EmailField(
         required=True,
@@ -30,6 +31,10 @@ class UserLoginSerializer(serializers.Serializer):
     username = serializers.CharField()
     password = serializers.CharField(write_only=True)
 
+class ProfileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Profile
+        fields = '__all__'
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
