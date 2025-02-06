@@ -4,7 +4,9 @@ from .views import *
 from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
-router.register(r'profile', ProfileViewset)
+router.register(r'profile', ProfileViewset),
+# router.register(r'register', UserRegistrationView)
+# router.register(r'login', UserLoginView)
 
 urlpatterns = [
     path('api/', include(router.urls)),
