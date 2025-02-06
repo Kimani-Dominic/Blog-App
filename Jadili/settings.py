@@ -92,7 +92,7 @@ REST_FRAMEWORK = {
     ],
 }
 
-AUTH_USER_MODEL = 'api.User'
+# AUTH_USER_MODEL = 'api.User'
 
 
 
@@ -122,7 +122,7 @@ DATABASES = {
 #corsheaders
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",  # Adjust the frontend URL
+    "http://localhost:5173",
 ]
 
 CORS_ALLOW_ALL_ORIGINS = False
