@@ -1,12 +1,44 @@
 from django.db import models
 # from django.contrib.auth.models import User
 from django.utils import timezone
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import AbstractUser, Group, Permission
 
 
 class User(AbstractUser):
-    def __str__(self):
-        return self.name
+    ADMIN = 'admin'
+    AUTHOR = 'author'
+    READER = 'reader'
+    
+    USER_ROLE_CHOICES =[
+        (ADMIN, 'admin'),
+        (AUTHOR, 'author'),
+        (READER, 'reader'),
+    ]
+    user_role = models.CharField(
+        max_length=10,
+        choices=USER_ROLE_CHOICES,
+        default=READER,
+    )
+    
+    groups = models.ManyToManyField(
+        Group,
+        related_name="api_users_groups",
+        blank=True
+    )
+    user_permissions = models.ManyToManyField(
+        Permission,
+        related_name="api_users_permissions",
+        blank=True
+    )
+    
+    def is_admin(self):
+        return self.user_role == self.ADMIN
+    
+    def is_author(self):
+        return self.user_role == self.AUTHOR
+    
+    def is_reader(self):
+        return self.user_role == self.READER
     
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -44,3 +76,20 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"{self.user.username} - {self.created_at}"
+    
+    
+    # class LoginView(APIView):
+    # def post(self, request):
+    #     print(request.data)
+    #     serializer = LoginSerializer(data=request.data)
+    #     if serializer.is_valid():
+    #         user = serializer.validated_data
+    #         token, created = Token.objects.get_or_create(user=user)
+    #         return Response({
+    #             "token": token.key,
+    #             "user_id": user.id,
+    #             "user_role": user.user_role,
+    #             "username": user.username
+    #         })
+    #     print(serializer.errors)
+    #     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
