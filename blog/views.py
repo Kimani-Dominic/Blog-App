@@ -6,13 +6,6 @@ from rest_framework.decorators import api_view
 from rest_framework import status
 from rest_framework.response import Response
 
-
-# class BlogPostListView(APIView):
-#     def get(self, request):
-#         posts = Post.objects.all()
-#         serializer = PostSerializer(posts, many=True)
-#     return Response(serializer.data, status=status.HTTP_200_OK)
-
 @api_view(['GET', 'POST'])
 def get_posts(request):
     if request.method == 'GET':
