@@ -1,11 +1,11 @@
 import './App.css';
-import Navbar from './components/Navbar'; // Import the Navbar component
-import Home from './components/Home'; //Home component
+import Navbar from './ui/Navbar'; // Import the Navbar component
+import Home from './ui/Home'; //Home component
 import Posts from './components/Favourite_Posts'; //Posts Components
 import Tags  from './components/Tags'; //Tag components
 import Recent_Posts from './components/Recent_Posts'; //Recent Posts
 import Footer from './components/Footer'; //Footer section
-import LoginForm from './components/Login';
+import LoginForm from './login/signup/Login';
 
 
 import {
