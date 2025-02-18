@@ -7,7 +7,7 @@
 
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axiosInstance from "../api/api";
+import { axiosInstance } from "../../api/api";
 
 const SignupForm: React.FC = () => {
   const [formData, setFormData] = useState({
