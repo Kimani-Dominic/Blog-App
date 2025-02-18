@@ -113,7 +113,7 @@ const Recent_Posts = () => {
                       <a href="#" className="span hover-2"># Lifestyle</a>
                     </div>
                     <div className="wrapper">
-                      <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+                      {/* <ion-icon name="time-outline" aria-hidden="true"></ion-icon> */}
                       <span className="span">3 mins read</span>
                     </div>
                   </div>
@@ -139,7 +139,7 @@ const Recent_Posts = () => {
                       <a href="#" className="span hover-2"># Lifestyle</a>
                     </div>
                     <div className="wrapper">
-                      <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+                      {/* <ion-icon name="time-outline" aria-hidden="true"></ion-icon> */}
                       <span className="span">3 mins read</span>
                     </div>
                   </div>
@@ -150,7 +150,7 @@ const Recent_Posts = () => {
           </ul>
           <nav aria-label="pagination" className="pagination">
             <a href="#" className="pagination-btn" aria-label="previous page">
-              <ion-icon name="arrow-back" aria-hidden="true"></ion-icon>
+              {/* <ion-icon name="arrow-back" aria-hidden="true"></ion-icon> */}
             </a>
             <a href="#" className="pagination-btn">1</a>
             <a href="#" className="pagination-btn">2</a>
