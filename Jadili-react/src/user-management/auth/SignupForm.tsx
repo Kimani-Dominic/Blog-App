@@ -7,15 +7,15 @@
 
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { axiosInstance } from "../../api/api";
+import axiosInstance from "../../api/api";
 
-const SignupForm: React.FC = () => {
+export const SignupForm = () => {
   const [formData, setFormData] = useState({
     username: "",
     email: "",
     password: "",
     confirm_password: "",
-    // termsAccepted: false,
+    termsAccepted: false,
   });
 
 
@@ -34,7 +34,7 @@ const SignupForm: React.FC = () => {
   //   }));
   // };
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event: { preventDefault: () => void; }) => {
     event.preventDefault();
     setErrorMessage('');
 
@@ -80,9 +80,10 @@ const handleChange = (e) => {
 };
         
     // console.log(formData);
-  };
+
 
   return (
+    <>
     <div className="form signup">
       <header>Signup</header>
       <form onSubmit={handleSubmit}>
@@ -123,6 +124,7 @@ const handleChange = (e) => {
         <input type="submit" value="Signup" />
       </form>
     </div>
+  </>
   );
 };
 
